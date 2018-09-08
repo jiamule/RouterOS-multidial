@@ -29,10 +29,10 @@ add action=mark-routing chain=prerouting comment=pcc3 connection-mark=3 new-rout
 add action=mark-connection chain=prerouting comment=pcc4 dst-address-type=!local new-connection-mark=4 per-connection-classifier=both-addresses:4/3 src-address-list=lanip
 add action=mark-routing chain=prerouting comment=pcc4 connection-mark=4 new-routing-mark=4r src-address-list=lanip
 /ip firewall nat
-add action=masquerade chain=srcnat comment=all out-interface=pppoe-out1
-add action=masquerade chain=srcnat comment=all out-interface=pppoe-out2
-add action=masquerade chain=srcnat comment=all out-interface=pppoe-out3
-add action=masquerade chain=srcnat comment=all out-interface=pppoe-out4
+add action=masquerade chain=srcnat out-interface=pppoe-out1
+add action=masquerade chain=srcnat out-interface=pppoe-out2
+add action=masquerade chain=srcnat out-interface=pppoe-out3
+add action=masquerade chain=srcnat out-interface=pppoe-out4
 
 /ip route
 add distance=1 gateway=pppoe-out1 routing-mark=1r

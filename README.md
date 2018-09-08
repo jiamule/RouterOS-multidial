@@ -1,3 +1,3 @@
 # RouterOS-multidial
-ros四拨脚本
+ros四拨脚本multidial.rsc
 
